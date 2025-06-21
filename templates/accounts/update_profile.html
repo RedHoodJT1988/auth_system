@@ -1,0 +1,37 @@
+{%  extends 'base.html' %}
+{%  load widget_tweaks %}
+
+{% block content %}
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="row">
+                     <div class="col-md-6">
+                         <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">First Name</label>
+                             {%  render_field form.first_name class="form-control" %}
+                            </div>
+                     </div>
+                    <div class="col-md-6">
+                         <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Last Name</label>
+                            {% render_field form.last_name class="form-control" %}
+                         </div>
+                     </div>
+                    <div class="col-md-12">
+                         <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Country</label>
+                            {% render_field form.country class="form-control" %}
+                         </div>
+                     </div>
+                </div>
+                <button class="nes-btn is-success">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{%  endblock content %}

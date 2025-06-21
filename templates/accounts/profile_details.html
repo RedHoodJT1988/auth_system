@@ -1,0 +1,35 @@
+{%  extends 'base.html' %}
+
+{% block content %}
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="row">
+                     <div class="col-md-6">
+                         <div class="mb-3">
+                            <label for="exampleInputEmail1" class="nes-text form-label">First Name</label>
+                            <input type="email" value="{{ user.first_name }}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                         </div>
+                     </div>
+                    <div class="col-md-6">
+                         <div class="mb-3">
+                            <label for="exampleInputEmail1" class="nes-text form-label">Last Name</label>
+                            <input type="email" value="{{ user.last_name }}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
+                         </div>
+                     </div>
+                    <div class="col-md-12">
+                         <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Country</label>
+                            <input type="email" value="{{ user.country }}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
+                         </div>
+                     </div>
+                </div>
+                <a href="{%  url 'update-profile' user.pk %}" type="submit" class="nes-btn is-primary text-decoration-none">Update Profile</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{%  endblock content %}
